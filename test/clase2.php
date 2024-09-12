@@ -47,10 +47,15 @@ class Empleado extends Persona {
 //MODIFICADORES DE ACCESO
 //Los modificadores de acceso se utilizan para controlar el acceso a los métodos y propiedades de una clase.
 //Los modificadores de acceso son: public, protected, private.
+
 //public: el acceso es total, es decir, el método o propiedad es accesible desde cualquier parte del programa.
 //protected: el acceso es limitado a la clase que la hereda o a las clases que hereden de ella.
 //private: el acceso es limitado a la clase en la que se declara.
 
+interface iFuncionesBasicas {
+    public function comer($alimento);
+    public function dormir();
+}
 
 abstract class Animal {
     protected $nombre;
@@ -61,14 +66,25 @@ abstract class Animal {
 
     abstract public function hacerSonido();
     abstract public function correr();
+    public function comer($alimento){
+        echo "No se comió nada<br>";
+    }
 }
 
-class Perro extends Animal {
+
+
+class Perro extends Animal implements iFuncionesBasicas {
     public function hacerSonido() {
         return "Guau";
     }
     public function correr() {
         echo "Corriendo a 50km/h<br>";
+    }
+    public function comer($alimento) {
+        echo "Comiendo: $alimento<br>";
+    }
+    public function dormir() {
+        echo "Zzz<br>";
     }
 }
 
@@ -79,6 +95,9 @@ class Gato extends Animal {
     public function correr() {
         echo "Corriendo a 42km/h<br>";
     }
+    public function comer($alimento) {
+        echo "Comiendo: $alimento<br>";
+    }
 }
 
 function hacerSonidoAnimal(Animal $animal) {
@@ -86,7 +105,9 @@ function hacerSonidoAnimal(Animal $animal) {
 }
 
 $perro = new Perro("Firulais");
+$perro->comer("carne"); // Comiendo: carne<br>
 $gato = new Gato("Michi");
+$gato->comer("pescado");
 
 hacerSonidoAnimal($perro); // Salida: Guau
 echo "<br>";

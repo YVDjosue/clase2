@@ -1,0 +1,10 @@
+<?php
+interface iPokemon{
+    public function gritoBatalla():void;
+    public function gritoMuerte():void;
+    public function getGolpeCritico():float;
+    public function aumentaDefensa(int $incremento):void;
+    public function reduceDefensa(int $decremento):void;
+    public function aumentaHp(int $incremento):void;
+    public function reduceHp(int $decremento):void;
+}
