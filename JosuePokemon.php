@@ -22,3 +22,4 @@ class JosuePokemon extends Pokemon implements iPokemon{
 }
 
 $pikachu = new JosuePokemon("Pikachu", 100, 50, 300);
+echo $pikachu->getNombre();
