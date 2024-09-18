@@ -1,0 +1,16 @@
+{
+    "name": "PHP Development",
+    "image": "mcr.microsoft.com/vscode/devcontainers/php:latest",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.shell.linux": "/bin/bash"
+        },
+        "extensions": [
+          "felixfbecker.php-debug",
+          "felixfbecker.php-intellisense"
+        ]
+      }
+    },
+    "postCreateCommand": "composer install"
+}  
