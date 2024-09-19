@@ -29,9 +29,7 @@ class Televisor implements iDispositivoElectronico, iCaracteristicas{
         $this->encendido = $encendido;
     }
     public function encender(){
-        .
-        .
-        .
+       
         return true;
     }
     public function apagar(){
